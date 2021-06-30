@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import ReduxToastr from "react-redux-toastr";
 import { PersistGate } from "redux-persist/integration/react";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import { store, persistor } from "../states/store";
 import { getAccessToken } from "../utils";
@@ -28,8 +29,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ApolloProvider client={client}>
-          <Component {...pageProps} />
-          <ReduxToastr />
+          <ChakraProvider>
+            <Component {...pageProps} />
+            <ReduxToastr />
+          </ChakraProvider>
         </ApolloProvider>
       </PersistGate>
     </Provider>
