@@ -4,6 +4,9 @@ import {
   FormErrorMessage,
   Input,
   FormHelperText,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
 } from "@chakra-ui/react";
 import { useField } from "formik";
 
@@ -36,11 +39,27 @@ export default function FormInput({
       isReadOnly={isReadOnly}
     >
       <FormLabel>{label}</FormLabel>
-      <Input
-        type="text"
-        onChange={(e) => setValue(e.target.value)}
-        placeholder={placeholder}
-      />
+      <InputGroup>
+        <InputLeftElement
+          pointerEvents="none"
+          color="gray.300"
+          fontSize="1.2em"
+        >
+          $
+        </InputLeftElement>
+        <Input
+          type="text"
+          onChange={(e) => setValue(e.target.value)}
+          placeholder={placeholder}
+        />
+        <InputRightElement
+          pointerEvents="none"
+          color="gray.300"
+          fontSize="1.2em"
+        >
+          $
+        </InputRightElement>
+      </InputGroup>
       {description && <FormHelperText>{description}</FormHelperText>}
       <FormErrorMessage>{meta.error}</FormErrorMessage>
     </FormControl>
