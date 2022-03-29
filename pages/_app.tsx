@@ -1,6 +1,5 @@
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
-import ReduxToastr from "react-redux-toastr";
 import { PersistGate } from "redux-persist/integration/react";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -31,7 +30,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ApolloProvider client={client}>
           <ChakraProvider>
             <Component {...pageProps} />
-            <ReduxToastr />
           </ChakraProvider>
         </ApolloProvider>
       </PersistGate>
