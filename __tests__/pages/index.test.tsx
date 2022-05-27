@@ -6,12 +6,13 @@ import * as assert from "uvu/assert";
 
 import Homepage from "@/pages";
 
-test.after(cleanup);
 test.after(() => {
+  cleanup();
   setTimeout(() => {
     process.exit(0);
   }, 500);
 });
+
 test("Homepage", () => {
   render(<Homepage />);
   assert.ok(screen.getByTestId("xx"));
