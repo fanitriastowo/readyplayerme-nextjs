@@ -1,7 +1,10 @@
+import { test } from "uvu";
+import * as assert from "uvu/assert";
+
 import { getAccessToken } from "@/utils";
 
-describe("getAccessToken()", () => {
-  it("returns string", () => {
-    expect(getAccessToken()).toBe("");
-  });
+test("getAccessToken()", () => {
+  assert.is(getAccessToken(), "", "returns string");
 });
+
+test.run();
