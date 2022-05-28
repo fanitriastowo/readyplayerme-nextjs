@@ -14,7 +14,6 @@ test.after(() => {
 
 test("Homepage", () => {
   render(<Homepage />);
-  screen.debug();
   assert.ok(screen.getByTestId("xx"));
 });
 
