@@ -4,6 +4,7 @@ const fs = require("fs");
 
 const fileList = {};
 const styleList = {};
+const firebaseLibList = {};
 
 try {
   fs.readdirSync("./assets/images/").forEach((file) => {
@@ -21,7 +22,17 @@ try {
   console.warn("Directory `./styles/` is likely missing");
 }
 
+try {
+  fs.readdirSync("./__mocks__/firebase/").forEach((file) => {
+    firebaseLibList[`firebase/${file.replace(".ts", "")}`] =
+      __dirname + "/__mocks__/firebase/" + file;
+  });
+} catch (error) {
+  console.warn("Directory `./__mocks__/firebase/` is likely missing");
+}
+
 moduleAlias.addAliases(fileList);
+moduleAlias.addAliases(firebaseLibList);
 moduleAlias.addAlias("@", __dirname);
 
 dotenv.config();

@@ -1,8 +1,7 @@
-import "global-jsdom/register";
 import React from "react";
-import { render, screen, cleanup } from "@testing-library/react";
 import { test } from "uvu";
 import * as assert from "uvu/assert";
+import { render, screen, cleanup } from "../renderer";
 
 import Homepage from "@/pages";
 
@@ -15,6 +14,7 @@ test.after(() => {
 
 test("Homepage", () => {
   render(<Homepage />);
+  screen.debug();
   assert.ok(screen.getByTestId("xx"));
 });
 

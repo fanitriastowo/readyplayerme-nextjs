@@ -14,7 +14,7 @@
     "prepare": "husky install",
     "export": "next build && next export",
     "deploy": "NODE_OPTIONS=--max_old_space_size=4096 next build && next export && firebase deploy --only hosting",
-    "test": "uvu -r ./setup-test.js -r tsm"
+    "test": "uvu -r ./setup-test.js -r global-jsdom/register -r tsm"
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
