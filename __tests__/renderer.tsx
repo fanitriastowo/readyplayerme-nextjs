@@ -6,11 +6,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import { store } from "@/states/store";
 
-import type { FC, ReactElement } from "react";
+import type { FC, ReactElement, ReactNode } from "react";
 import type { RenderOptions } from "@testing-library/react";
 import type { Context } from "uvu";
 
-const AllTheProviders: FC = ({ children }) => {
+const AllTheProviders: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <Provider store={store}>
       <ChakraProvider>{children}</ChakraProvider>
