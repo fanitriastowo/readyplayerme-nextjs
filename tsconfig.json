@@ -33,7 +33,8 @@
       "@/assets/*": ["assets/*"],
       "@/contexts/*": ["contexts/*"],
       "@/interfaces/*": ["interfaces/*"],
-      "@/pages": ["pages/index"]
+      "@/pages": ["pages/index"],
+      "@/__tests__/*": ["__tests__/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

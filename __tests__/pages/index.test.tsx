@@ -1,15 +1,23 @@
 import React from "react";
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import { render, screen, cleanup } from "../renderer";
+import {
+  render,
+  screen,
+  cleanup,
+  cleanupSuite,
+  registerSuite,
+} from "@/__tests__/renderer";
 
 import Homepage from "@/pages";
 
-test.after(() => {
+test.before((ctx) => {
+  registerSuite(ctx);
+});
+
+test.after((ctx) => {
   cleanup();
-  setTimeout(() => {
-    process.exit(0);
-  }, 500);
+  cleanupSuite(ctx);
 });
 
 test("Homepage", () => {
