@@ -71,6 +71,26 @@ const securityHeaders = [
     key: "X-Frame-Options",
     value: "SAMEORIGIN",
   },
+  {
+    key: "Permissions-Policy",
+    value: "autoplay=*,fullscreen=*",
+  },
+  {
+    key: "Cross-Origin-Embedder-Policy",
+    value: "unsafe-none",
+  },
+  {
+    key: "Cross-Origin-Resource-Policy",
+    value: "cross-origin",
+  },
+  {
+    key: "Cross-Origin-Opener-Policy",
+    value: "cross-origin",
+  },
+  {
+    key: "Expect-CT",
+    value: "max-age=86400",
+  },
 ];
 
 module.exports = {
