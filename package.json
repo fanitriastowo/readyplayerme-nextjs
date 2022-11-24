@@ -17,7 +17,6 @@
     "test": "uvu -r ./setup-test.js -r global-jsdom/register -r tsm"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.5",
     "@babel/core": "^7.18.2",
     "@chakra-ui/react": "^2.1.2",
     "@emotion/react": "^11.9.0",
@@ -26,7 +25,6 @@
     "firebase": "^9.8.2",
     "formik": "^2.2.9",
     "framer-motion": "^6.3.5",
-    "graphql": "^16.5.0",
     "lodash": "^4.17.21",
     "next": "^12.1.6",
     "react": "^18.1.0",

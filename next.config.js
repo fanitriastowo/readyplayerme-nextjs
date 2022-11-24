@@ -41,16 +41,16 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const securityHeaders = [
-  {
-    key: "Content-Security-Policy",
-    value: Object.entries(ContentSecurityPolicy)
-      .map(([key, value]) => {
-        return `${key} ${value.join(" ")};`;
-      })
-      .join(" ")
-      .replace(/\s{2,}/g, " ")
-      .trim(),
-  },
+  // {
+  //   key: "Content-Security-Policy",
+  //   value: Object.entries(ContentSecurityPolicy)
+  //     .map(([key, value]) => {
+  //       return `${key} ${value.join(" ")};`;
+  //     })
+  //     .join(" ")
+  //     .replace(/\s{2,}/g, " ")
+  //     .trim(),
+  // },
   {
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",
