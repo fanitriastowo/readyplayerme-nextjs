@@ -13,7 +13,7 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js --max-warnings=0",
     "prepare": "husky install",
     "export": "next build && next export",
-    "deploy": "NODE_OPTIONS=--max_old_space_size=4096 next build && next export && firebase deploy --only hosting",
+    "deploy": "next build && next export && firebase deploy --only hosting",
     "test": "uvu -r ./setup-test.js -r global-jsdom/register -r tsm"
   },
   "dependencies": {
